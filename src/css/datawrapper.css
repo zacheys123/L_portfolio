@@ -1,0 +1,21 @@
+.remove {
+	display: none !important;
+}
+.active_page {
+	position: absolute;
+	display: block !important;
+	width: 100%;
+	min-height: 35rem;
+	transform: scale(1) !important;
+	transition: transform 2s ease-in-out !important;
+}
+
+.loading {
+	margin-top: 16rem;
+	margin-left: 12rem;
+	height: 5px;
+	position: absolute;
+	width: 20%;
+	border-radius: 20px;
+	background-color: #eee;
+}

@@ -1,0 +1,18 @@
+.biocard{
+    min-height:23rem;
+    max-width:16rem;
+}
+.biodata::first-letter {
+font-size:6rem;
+margin-left: 1.4rem;
+margin-top: -.6rem;
+color: rgb(186, 8, 189);
+font-family:Georgia, 'Times New Roman', Times, serif;
+line-height:1rem;
+float:left;
+}
+.biodata {
+    color:rgb(25, 10, 161);
+    font-size: 1rem;
+font-weight:bold; 
+}
