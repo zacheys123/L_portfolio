@@ -4,7 +4,7 @@ export const IntList = styled.li`
 	max-width: 24rem;
 	margin-bottom: 1rem;
 	margin-right: 1rem;
-	height: 13rem;
+	height: 14rem;
 	list-style: none;
 	background: white;
 	padding: 1rem;
@@ -15,4 +15,8 @@ export const Title = styled.h5`
 	text-decoration: underline;
 	color: lightgreen;
 `;
-export const Description = styled.div``;
+export const Description = styled.div`
+	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman',
+		serif !important;
+	font-weight: bold;
+`;

@@ -11,6 +11,7 @@ export const Wrapper = styled.div`
 	background-color: white;
 	flex-wrap: wrap;
 	@media ${device.tablet} {
+		padding: 0.4rem 1rem 0.2rem 2.4rem;
 		justify-content: space-between;
 		background: rgba(33, 65, 87);
 		min-height: 100%;
@@ -24,13 +25,28 @@ export const NavList = styled.ul`
 	justify-content: space-between;
 	position: relative;
 	align-items: center;
+	transition: max-height 0.8s ease-in-out;
 
 	@media ${device.tablet} {
 		overflow: hidden;
 		flex-direction: column;
 		width: 100%;
-		max-height: ${({ isopen }) => (isopen ? '13rem' : '0px')};
-		transition: max-height 0.4s ease-in-out;
+		max-height: ${({ isopen }) => (isopen ? '50rem' : '0px')};
+		transition: max-height 0.8s ease-in-out;
+	}
+	@media ${device.mobileL} {
+		overflow: hidden;
+		flex-direction: column;
+		width: 100%;
+		max-height: ${({ isopen }) => (isopen ? '50rem' : '0px')};
+		transition: max-height 0.8s ease-in-out;
+	}
+	@media ${device.mobileM} {
+		overflow: hidden;
+		flex-direction: column;
+		width: 100%;
+		max-height: ${({ isopen }) => (isopen ? '50rem' : '0px')};
+		transition: max-height 0.8s ease-in-out;
 	}
 `;
 export const NavItems = styled.div`
@@ -60,19 +76,28 @@ export const NavItems = styled.div`
 	}
 
 	@media ${device.tablet} {
-		margin: 0.4rem 2rem;
+		margin: 0.7rem 2rem;
 		padding: 0 1rem !important;
 		font-size: 1.3rem !important;
 	}
 	@media ${device.mobileL} {
-		margin: 0 2rem;
+		margin: 4.5rem 2rem;
 		padding: 0 1rem !important;
-		font-size: 0.7rem !important;
+		font-size: 1.2rem !important;
+		font-weight: 700;
+		border-bottom: 1px solid grey;
 	}
 	@media ${device.mobileM} {
-		margin: 0 2rem;
+		margin: 0.7rem 2rem;
 		padding: 0 1rem !important;
-		font-size: 0.7rem !important;
+		font-size: 0.93rem !important;
+		font-weight: 700;
+	}
+	@media ${device.mobileS} {
+		margin: 0.7rem 2rem;
+		padding: 0 1rem !important;
+		font-size: 0.93rem !important;
+		font-weight: 700;
 	}
 `;
 export const Logo = styled.div`

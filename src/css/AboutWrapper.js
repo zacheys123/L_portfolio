@@ -1,14 +1,10 @@
 import styled from 'styled-components';
 import { media__queries as device } from './media__queries';
 export const Wrapper = styled.div`
-	background: linear-gradient(
-		hsl(3210, 40%, 0%) 0%,
-		rgba(125, 123, 123, 0.4),
-		hsl(10, 90%, 3%) 30%
-	);
+	background: black;
 	overflow: hidden;
 	min-height: 88vh;
-
+	display: ${(props) => (props.opennav ? 'none' : '')};
 	@media ${device.tablet} {
 		min-height: max-content;
 	}
@@ -98,8 +94,6 @@ export const Leftbody__list = styled.div`
 		position: absolute;
 	}
 	@media ${device.mobileS} {
-		display: none;
-		display: none;
 		display: flex !important;
 		z-index: 1;
 		margin-top: -7rem;
@@ -108,14 +102,18 @@ export const Leftbody__list = styled.div`
 		position: absolute;
 	}
 	@media ${device.mobileM} {
-		display: none;
-		display: none;
 		display: flex !important;
 		z-index: 1;
 		margin-top: -7rem;
 		opacity: 0.8;
 		background-color: black;
 		position: absolute;
+	}
+	@media ${device.laptop} {
+		font-size: 1rem !important;
+	}
+	@media ${device.laptopL} {
+		font-size: 1rem !important;
 	}
 `;
 export const Right__body = styled.div`
@@ -128,6 +126,7 @@ export const Right__body = styled.div`
 	min-height: 100%;
 	overflow-y: auto;
 	@media ${device.tablet} {
+		min-height: 50vw !important;
 		flex: 1;
 		margin-top: -5rem;
 	}
@@ -182,6 +181,11 @@ export const Icons = styled.div`
 	height: 38px !important;
 	opacity: 0.7;
 	display: none;
+
+	@media (max-width: 768px) {
+		margin-right: 10rem;
+	}
+
 	@media ${device.tablet} {
 		display: block;
 		margin-right: 4rem;
@@ -220,16 +224,7 @@ export const Top__nav = styled.div`
 	overflow: hidden;
 	z-index: 1;
 
-	@media ${device.laptop} {
-		display: none;
-	}
-	@media ${device.laptopL} {
-		display: none;
-	}
-	@media ${device.desktop} {
-		display: none;
-	}
-	@media ${device.desktopL} {
+	@media (min-width: 768px) {
 		display: none;
 	}
 `;
@@ -240,6 +235,9 @@ export const Nav = styled.ul`
 export const Nav_Li = styled.li`
 	list-style-type: none;
 	margin-top: 3rem;
+	font-weight: bold;
 	padding: 0.3rem;
-	color: white;
+	cursor: pointer;
+	font-family: 'Helvetica Neue';
+	color: yellowgreen;
 `;

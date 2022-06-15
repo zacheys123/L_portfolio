@@ -19,7 +19,7 @@ const mystyle = {
 	color: 'purple !important',
 	textDcoration: 'none !important',
 };
-export default function Navbar() {
+export default function Navbar(props) {
 	const [isopen, setisopen] = useState(false);
 	const [date, setDate] = useState(new Date().toLocaleTimeString());
 
@@ -27,6 +27,7 @@ export default function Navbar() {
 		const date = new Date().toLocaleTimeString();
 		setDate(date);
 	};
+	props.Navcallback(isopen);
 	useEffect(() => {
 		setInterval(() => {
 			mywatch();
@@ -34,7 +35,7 @@ export default function Navbar() {
 		return () => {
 			clearInterval(mywatch);
 		};
-	});
+	}, []);
 	return (
 		<Grid>
 			<Wrapper className="container-fluid">

@@ -39,14 +39,13 @@ import {
 	expfunc,
 	intfunc,
 } from './data/datareducer';
-
-import { MoreHoriz, MoreVert } from '@mui/icons-material';
+import { Close, MoreVert } from '@mui/icons-material';
 import '../../css/datawrapper.css';
 import { IconButton, Button, Typography } from '@mui/material';
 import { motion } from 'framer-motion/dist/framer-motion';
 import '../app/App.css';
 export const dataContext = createContext();
-export default function About() {
+export default function About(props) {
 	// refference definitions
 	const isbio = useRef();
 	const ised = useRef();
@@ -142,7 +141,7 @@ export default function About() {
 				}}
 				exit={{ x: window.innerWidth, transition: { duration: 0.8 } }}
 			>
-				<Wrapper className="container">
+				<Wrapper className="container" opennav={props.opennav}>
 					<Div className="d-flex  justify-content-end mt-2">
 						<Box>
 							<Icons>
@@ -154,7 +153,7 @@ export default function About() {
 											}}
 										/>
 									) : (
-										<MoreHoriz
+										<Close
 											onClick={() => {
 												setList(!islist);
 											}}
@@ -230,33 +229,44 @@ export default function About() {
 							</IconButton>
 						</Box>
 					</Div>
-					{!islist && (
-						<Top__nav>
-							<Nav>
-								<Nav_Li
-									className="active"
-									onClick={handlebio}
-									ref={isbio}
-								>
-									Bio
-								</Nav_Li>
-								<Nav_Li ref={ised} onClick={handleed}>
-									Education
-								</Nav_Li>
-								<Nav_Li ref={isproj} onClick={handleproj}>
-									Projects
-								</Nav_Li>
-								<Nav_Li ref={isvid} onClick={handlevid}>
-									Videos
-								</Nav_Li>
-								<Nav_Li ref={isexp} onClick={handleexp}>
-									Experience
-								</Nav_Li>
-								<Nav_Li ref={isint} onClick={handleint}>
-									Interests
-								</Nav_Li>
-							</Nav>
-						</Top__nav>
+					{islist && (
+						<motion.div
+							initial={{ width: 0, opacity: 0 }}
+							animate={{
+								width: '100%',
+								opacity: 1,
+								left: '0',
+								transition: { duration: 0.4 },
+							}}
+							exit={{ opactity: 0 }}
+						>
+							<Top__nav>
+								<Nav>
+									<Nav_Li
+										className="active"
+										onClick={handlebio}
+										ref={isbio}
+									>
+										Bio
+									</Nav_Li>
+									<Nav_Li ref={ised} onClick={handleed}>
+										Education
+									</Nav_Li>
+									<Nav_Li ref={isproj} onClick={handleproj}>
+										Projects
+									</Nav_Li>
+									<Nav_Li ref={isvid} onClick={handlevid}>
+										Videos
+									</Nav_Li>
+									<Nav_Li ref={isexp} onClick={handleexp}>
+										Experience
+									</Nav_Li>
+									<Nav_Li ref={isint} onClick={handleint}>
+										Interests
+									</Nav_Li>
+								</Nav>
+							</Top__nav>
+						</motion.div>
 					)}
 					<BodyWrapper>
 						{!loading && (
@@ -273,7 +283,7 @@ export default function About() {
 									></motion.div>
 								</Borderdiv>
 
-								<Leftbody__list islist={islist}>
+								<Leftbody__list>
 									<List>
 										<Li
 											className="active"

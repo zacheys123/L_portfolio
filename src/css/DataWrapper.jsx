@@ -13,6 +13,7 @@ export const Bio = styled.div`
 	z-index: 1;
 
 	@media ${device.tablet} {
+		display: none;
 		background: black;
 		display: ${(props) => (props.loading ? 'none' : 'block')};
 		font-size: 1rem !important;

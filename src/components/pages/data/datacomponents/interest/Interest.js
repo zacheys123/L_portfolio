@@ -9,7 +9,6 @@ import {
 import { Title, Description, IntList } from './interest.style';
 function Interest({ data_interest }) {
 	const { title, descrption } = data_interest;
-	console.log(descrption);
 	return (
 		<IntList>
 			<Title>
