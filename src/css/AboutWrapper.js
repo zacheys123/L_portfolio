@@ -2,11 +2,27 @@ import styled from 'styled-components';
 import { media__queries as device } from './media__queries';
 export const Wrapper = styled.div`
 	background: linear-gradient(
-		hsl(110, 40%, 0%) 0%,
-		rgba(25, 123, 123, 0.4),
-		hsl(210, 90%, 3%) 30%
+		hsl(3210, 40%, 0%) 0%,
+		rgba(125, 123, 123, 0.4),
+		hsl(10, 90%, 3%) 30%
 	);
+	overflow: hidden;
 	min-height: 88vh;
+
+	@media ${device.tablet} {
+		min-height: max-content;
+	}
+
+	@media ${device.mobileM} {
+		min-height: max-content;
+	}
+	@media ${device.mobileS} {
+		min-height: max-content;
+	}
+
+	@media ${device.mobileM} {
+		min-height: max-content;
+	}
 `;
 
 export const Box = styled.div`
@@ -39,6 +55,7 @@ export const Left__body = styled.div`
 	flex: 0.3;
 
 	@media ${device.tablet} {
+		display: none;
 		flex: 0;
 	}
 	@media ${device.mobileS} {
@@ -126,6 +143,10 @@ export const Right__body = styled.div`
 		flex: 1;
 		margin-top: -7rem;
 	}
+	@media ${device.laptopL} {
+		flex: 1;
+		margin-top: -4rem;
+	}
 `;
 export const List = styled.ul`
 	margin-top: 4rem;
@@ -188,4 +209,37 @@ export const Li = styled.li`
 	@media ${device.mobileL} {
 		display: none;
 	}
+`;
+
+export const Top__nav = styled.div`
+	position: absolute;
+	max-width: 100%;
+	background: black;
+	opacity: 0.8;
+
+	overflow: hidden;
+	z-index: 1;
+
+	@media ${device.laptop} {
+		display: none;
+	}
+	@media ${device.laptopL} {
+		display: none;
+	}
+	@media ${device.desktop} {
+		display: none;
+	}
+	@media ${device.desktopL} {
+		display: none;
+	}
+`;
+export const Nav = styled.ul`
+	display: block;
+	padding: 1rem;
+`;
+export const Nav_Li = styled.li`
+	list-style-type: none;
+	margin-top: 3rem;
+	padding: 0.3rem;
+	color: white;
 `;

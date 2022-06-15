@@ -13,6 +13,9 @@ export const Wrapper = styled.div`
 	@media ${device.tablet} {
 		justify-content: space-between;
 		background: rgba(33, 65, 87);
+		min-height: 100%;
+		overflow: hidden;
+		z-index: 1;
 	}
 `;
 
@@ -26,7 +29,7 @@ export const NavList = styled.ul`
 		overflow: hidden;
 		flex-direction: column;
 		width: 100%;
-		max-height: ${({ isopen }) => (isopen ? '300px' : '0px')};
+		max-height: ${({ isopen }) => (isopen ? '13rem' : '0px')};
 		transition: max-height 0.4s ease-in-out;
 	}
 `;
@@ -57,9 +60,9 @@ export const NavItems = styled.div`
 	}
 
 	@media ${device.tablet} {
-		margin: 0 2rem;
+		margin: 0.4rem 2rem;
 		padding: 0 1rem !important;
-		font-size: 0.7rem !important;
+		font-size: 1.3rem !important;
 	}
 	@media ${device.mobileL} {
 		margin: 0 2rem;
@@ -75,14 +78,24 @@ export const NavItems = styled.div`
 export const Logo = styled.div`
 	display: flex;
 	align-items: center;
+
 	& img {
-		display: none;
+		margin: 0 1rem;
+		height: 3rem;
+		width: 3rem;
+		border-radius: 50px;
+		@media ${device.tablet} {
+			display: none !important;
+		}
+		@media ${device.mobileS} {
+			display: none !important;
+		}
 		@media ${device.mobileL} {
-			margin: 0 1rem;
-			height: 3rem;
-			width: 3rem;
-			border-radius: 50px;
-			display: inline-block !important;
+			display: none !important;
+		}
+		@media ${device.mobileM} {
+			margin: -1.9rem;
+			display: none !important;
 		}
 	}
 	& h4 {
@@ -104,10 +117,20 @@ export const Logo = styled.div`
 		font-size: 1.4rem;
 	}
 `;
+
 export const Menu = styled.div`
 	display: none !important;
 	@media ${device.tablet} {
 		display: flex !important;
+	}
+	@media ${device.mobileS} {
+		margin: -1.9rem;
+		font-size: 1.4rem;
+	}
+`;
+export const Time = styled.div`
+	@media ${device.tablet} {
+		display: none !important;
 	}
 	@media ${device.mobileS} {
 		margin: -1.9rem;

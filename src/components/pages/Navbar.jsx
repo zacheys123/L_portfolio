@@ -4,6 +4,7 @@ import {
 	NavList,
 	NavItems,
 	Logo,
+	Time,
 	Menu,
 } from '../../css/NavbarWrapper';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -72,7 +73,7 @@ export default function Navbar() {
 					<Link style={{ textDecoration: 'none' }} to="pages/faq">
 						<NavItems>Faq</NavItems>
 					</Link>
-					<em
+					<Time
 						style={{
 							color: 'white',
 							fontFamily: 'serif',
@@ -80,7 +81,7 @@ export default function Navbar() {
 						}}
 					>
 						{date}
-					</em>
+					</Time>
 				</NavList>
 				<Outlet />
 			</Wrapper>

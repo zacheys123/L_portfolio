@@ -17,7 +17,9 @@ import {
 	Borderdiv,
 	List,
 	Li,
-	Items,
+	Top__nav,
+	Nav,
+	Nav_Li,
 } from '../../css/AboutWrapper';
 import { Link } from 'react-router-dom';
 
@@ -228,6 +230,34 @@ export default function About() {
 							</IconButton>
 						</Box>
 					</Div>
+					{!islist && (
+						<Top__nav>
+							<Nav>
+								<Nav_Li
+									className="active"
+									onClick={handlebio}
+									ref={isbio}
+								>
+									Bio
+								</Nav_Li>
+								<Nav_Li ref={ised} onClick={handleed}>
+									Education
+								</Nav_Li>
+								<Nav_Li ref={isproj} onClick={handleproj}>
+									Projects
+								</Nav_Li>
+								<Nav_Li ref={isvid} onClick={handlevid}>
+									Videos
+								</Nav_Li>
+								<Nav_Li ref={isexp} onClick={handleexp}>
+									Experience
+								</Nav_Li>
+								<Nav_Li ref={isint} onClick={handleint}>
+									Interests
+								</Nav_Li>
+							</Nav>
+						</Top__nav>
+					)}
 					<BodyWrapper>
 						{!loading && (
 							<Left__body loading={loading}>
@@ -242,34 +272,33 @@ export default function About() {
 										}}
 									></motion.div>
 								</Borderdiv>
-								{islist && (
-									<Leftbody__list islist={islist}>
-										<List>
-											<Li
-												className="active"
-												onClick={handlebio}
-												ref={isbio}
-											>
-												Bio
-											</Li>
-											<li ref={ised} onClick={handleed}>
-												Education
-											</li>
-											<li ref={isproj} onClick={handleproj}>
-												Projects
-											</li>
-											<li ref={isvid} onClick={handlevid}>
-												Videos
-											</li>
-											<li ref={isexp} onClick={handleexp}>
-												Experience
-											</li>
-											<li ref={isint} onClick={handleint}>
-												Interests
-											</li>
-										</List>
-									</Leftbody__list>
-								)}
+
+								<Leftbody__list islist={islist}>
+									<List>
+										<Li
+											className="active"
+											onClick={handlebio}
+											ref={isbio}
+										>
+											Bio
+										</Li>
+										<li ref={ised} onClick={handleed}>
+											Education
+										</li>
+										<li ref={isproj} onClick={handleproj}>
+											Projects
+										</li>
+										<li ref={isvid} onClick={handlevid}>
+											Videos
+										</li>
+										<li ref={isexp} onClick={handleexp}>
+											Experience
+										</li>
+										<li ref={isint} onClick={handleint}>
+											Interests
+										</li>
+									</List>
+								</Leftbody__list>
 							</Left__body>
 						)}
 						<Right__body>

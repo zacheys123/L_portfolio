@@ -63,6 +63,16 @@ export const Education = styled.div`
 	min-height: 100%;
 	transform: scale(0);
 	display: none;
+
+	@media ${device.tablet} {
+		background: black;
+		display: ${(props) => (props.loading ? 'none' : 'block')};
+		font-size: 1rem !important;
+		& p {
+			font-size: 0.7rem !important;
+			color: white !important;
+		}
+	}
 `;
 export const Projects = styled.div`
 	background: green;
@@ -70,12 +80,32 @@ export const Projects = styled.div`
 	min-height: 100%;
 	transform: scale(0);
 	display: none;
+
+	@media ${device.tablet} {
+		background: black;
+		display: ${(props) => (props.loading ? 'none' : 'block')};
+		font-size: 1rem !important;
+		& p {
+			font-size: 0.7rem !important;
+			color: white !important;
+		}
+	}
 `;
 export const Videos = styled.div`
 	background: purple;
 	width: 100%;
 	transform: scale(0);
 	display: none;
+
+	@media ${device.tablet} {
+		background: black;
+		display: ${(props) => (props.loading ? 'none' : 'block')};
+		font-size: 1rem !important;
+		& p {
+			font-size: 0.7rem !important;
+			color: white !important;
+		}
+	}
 `;
 export const Experience = styled.div`
 	background: indigo;
@@ -83,6 +113,16 @@ export const Experience = styled.div`
 	transform: scale(0);
 	min-height: 35rem;
 	display: none;
+
+	@media ${device.tablet} {
+		background: black;
+		display: ${(props) => (props.loading ? 'none' : 'block')};
+		font-size: 1rem !important;
+		& p {
+			font-size: 0.7rem !important;
+			color: white !important;
+		}
+	}
 `;
 export const Interests = styled.div`
 	transform: scale(0);
@@ -90,5 +130,15 @@ export const Interests = styled.div`
 	padding: 1rem;
 
 	display: none;
+
+	@media ${device.tablet} {
+		background: black;
+		display: ${(props) => (props.loading ? 'none' : 'block')};
+		font-size: 1rem !important;
+		& p {
+			font-size: 0.7rem !important;
+			color: white !important;
+		}
+	}
 `;
 // each page styling
