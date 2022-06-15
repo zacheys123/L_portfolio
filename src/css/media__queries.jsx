@@ -6,15 +6,16 @@ const size = {
 	laptop: '1024px',
 	laptopL: '1440px',
 	desktop: '2560px',
+	desktopL: '3000px',
 };
 
 export const media__queries = {
 	mobileS: `(max-width: ${size.mobileS})`,
 	mobileM: `(max-width: ${size.mobileM})`,
-	mobileL: `(min-width: ${size.mobileL})`,
+	mobileL: `(max-width: ${size.mobileL})`,
 	tablet: `(max-width: ${size.tablet})`,
-	laptop: `(min-width: ${size.laptop})`,
-	laptopL: `(min-width: ${size.laptopL})`,
+	laptop: `(max-width: ${size.laptop})`,
+	laptopL: `(max-width: ${size.laptopL})`,
 	desktop: `(min-width: ${size.desktop})`,
-	desktopL: `(min-width: ${size.desktop})`,
+	desktopL: `(min-width: ${size.desktopL})`,
 };

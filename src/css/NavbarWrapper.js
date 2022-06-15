@@ -37,7 +37,7 @@ export const NavItems = styled.div`
 	text-decoration: none !important;
 	color: #67bc98 !important;
 	font-family: serif;
-	font-size: 1.8rem !important;
+	font-size: 1rem !important;
 
 	&::before {
 		content: '';
@@ -59,12 +59,17 @@ export const NavItems = styled.div`
 	@media ${device.tablet} {
 		margin: 0 2rem;
 		padding: 0 1rem !important;
-		font-size: 1rem !important;
+		font-size: 0.7rem !important;
 	}
 	@media ${device.mobileL} {
 		margin: 0 2rem;
 		padding: 0 1rem !important;
-		font-size: 1rem !important;
+		font-size: 0.7rem !important;
+	}
+	@media ${device.mobileM} {
+		margin: 0 2rem;
+		padding: 0 1rem !important;
+		font-size: 0.7rem !important;
 	}
 `;
 export const Logo = styled.div`
@@ -94,6 +99,7 @@ export const Logo = styled.div`
 		color: #3bce !important;
 	}
 	@media ${device.tablet} {
+		display: block !important;
 		margin: -1.9rem;
 		font-size: 1.4rem;
 	}

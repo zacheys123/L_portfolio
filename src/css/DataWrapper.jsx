@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { media__queries as device } from '../css/media__queries';
 export const Wrapper = styled.div`
 	width: 100%;
 	min-height: 100%;
@@ -10,6 +11,51 @@ export const Bio = styled.div`
 	min-height: 35rem;
 	display: ${(props) => (props.loading ? 'none' : 'block')};
 	z-index: 1;
+
+	@media ${device.tablet} {
+		background: black;
+		display: ${(props) => (props.loading ? 'none' : 'block')};
+		font-size: 1rem !important;
+		& p {
+			font-size: 0.7rem !important;
+			color: white !important;
+		}
+	}
+	@media ${device.mobileS} {
+		font-size: 1rem !important;
+		background: black;
+		font-size: 1rem !important;
+		& p {
+			color: white !important;
+			font-size: 0.7rem !important;
+		}
+	}
+	@media ${device.mobileL} {
+		font-size: 1rem !important;
+		background: black;
+		font-size: 1rem !important;
+		& p {
+			color: white !important;
+			font-size: 0.7rem !important;
+		}
+	}
+	@media ${device.mobileM} {
+		font-size: 1rem !important;
+		background: black;
+		font-size: 1rem !important;
+		& p {
+			color: white !important;
+			font-size: 0.7rem !important;
+		}
+	}
+	@media ${device.laptop} {
+		background: black;
+
+		& p {
+			color: white !important;
+			font-size: 0.7rem !important;
+		}
+	}
 `;
 export const Education = styled.div`
 	background: blue;
@@ -43,15 +89,6 @@ export const Interests = styled.div`
 	width: 100%;
 	padding: 1rem;
 
-	&::-webkit-scrollbar {
-		width: 1rem;
-	}
-	&::-webkit-scrollbar-track {
-		background: hsl(23, 45%, 60% /1);
-	}
-	&::-webkit-scrollbar-thumb {
-		background: hsl(223, 45%, 20% /1);
-	}
 	display: none;
 `;
 // each page styling

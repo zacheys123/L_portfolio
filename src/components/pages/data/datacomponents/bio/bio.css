@@ -11,8 +11,36 @@ font-family:Georgia, 'Times New Roman', Times, serif;
 line-height:1rem;
 float:left;
 }
+@media only screen and  (max-width:768px) {
+    .biodata::first-letter{
+        font-size: 4rem;
+            margin-left: -.93rem;
+            margin-top: -.4rem;
+            color:blue;
+    }
+}
 .biodata {
     color:rgb(25, 10, 161);
     font-size: 1rem;
 font-weight:bold; 
+}
+
+@media only screen and (max-width:768px) {
+.navbio__head {
+    display:none;
+    font-size:.7rem !important;
+}
+}
+
+@media only screen and (max-width:768px) and (min-width:0px) {
+    .navbio {
+        margin-left: .6rem;
+        font-size: 1.4rem !important;
+    }
+}
+@media only screen and (min-width:768px) and (max-width:1440px) {
+    .navbio {
+      
+        font-size: 1.7rem !important;
+    }
 }

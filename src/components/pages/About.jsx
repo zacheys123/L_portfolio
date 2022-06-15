@@ -8,7 +8,7 @@ import React, {
 import {
 	Wrapper,
 	Box,
-	Header,
+	Icons,
 	Div,
 	Left__body,
 	Right__body,
@@ -16,6 +16,7 @@ import {
 	Leftbody__list,
 	Borderdiv,
 	List,
+	Li,
 	Items,
 } from '../../css/AboutWrapper';
 import { Link } from 'react-router-dom';
@@ -37,6 +38,7 @@ import {
 	intfunc,
 } from './data/datareducer';
 
+import { MoreHoriz, MoreVert } from '@mui/icons-material';
 import '../../css/datawrapper.css';
 import { IconButton, Button, Typography } from '@mui/material';
 import { motion } from 'framer-motion/dist/framer-motion';
@@ -51,6 +53,7 @@ export default function About() {
 	const isexp = useRef();
 	const isint = useRef();
 	const [loading, setLoading] = useState(true);
+	const [islist, setList] = useState(false);
 	const [pagedata, setPagedata] = useState({});
 
 	// passing props to parent
@@ -140,7 +143,24 @@ export default function About() {
 				<Wrapper className="container">
 					<Div className="d-flex  justify-content-end mt-2">
 						<Box>
-							<Link to="">
+							<Icons>
+								<IconButton>
+									{!islist ? (
+										<MoreVert
+											onClick={() => {
+												setList(!islist);
+											}}
+										/>
+									) : (
+										<MoreHoriz
+											onClick={() => {
+												setList(!islist);
+											}}
+										/>
+									)}
+								</IconButton>
+							</Icons>
+							<Link to="" className="navbio__head">
 								<motion.div
 									initial={{ scale: 1 }}
 									animate={{
@@ -156,48 +176,53 @@ export default function About() {
 									</Button>
 								</motion.div>
 							</Link>
+
 							<IconButton component={Link} to="">
 								<Facebook
+									className="navbio"
 									sx={{
 										color: '#4267b2',
-										fontSize: '1.7rem !important',
+										fontSize: '1.7rem ',
 									}}
 								/>
 							</IconButton>
 
-							<IconButton component={Link} to="">
+							<IconButton component={Link} to="" className="navbio">
 								<LinkedIn
 									sx={{
 										color: '#0072b1',
-										fontSize: '1.7rem !important',
+										fontSize: '1.7rem ',
 									}}
 								/>
 							</IconButton>
 
 							<IconButton component={Link} to="">
 								<GitHub
+									className="navbio"
 									sx={{
 										color: '#333',
-										fontSize: '1.7rem !important',
+										fontSize: '1.7rem ',
 									}}
 								/>
 							</IconButton>
 
 							<IconButton component={Link} to="">
 								<Instagram
+									className="navbio"
 									sx={{
 										color:
 											'linear-gradient(rgb(81,91,212),rgb(129,52,175),rgb(221,42,123),rgb(254,218,119),rgb(245,133,41))!important',
-										fontSize: '1.7rem !important',
+										fontSize: '1.7rem ',
 									}}
 								/>
 							</IconButton>
 
 							<IconButton component={Link} to="">
 								<YouTube
+									className="navbio"
 									sx={{
 										color: 'rgb(229,42,115)',
-										fontSize: '1.7rem !important',
+										fontSize: '1.7rem ',
 									}}
 								/>
 							</IconButton>
@@ -217,32 +242,34 @@ export default function About() {
 										}}
 									></motion.div>
 								</Borderdiv>
-								<Leftbody__list>
-									<List>
-										<li
-											className="active"
-											onClick={handlebio}
-											ref={isbio}
-										>
-											Bio
-										</li>
-										<li ref={ised} onClick={handleed}>
-											Education
-										</li>
-										<li ref={isproj} onClick={handleproj}>
-											Projects
-										</li>
-										<li ref={isvid} onClick={handlevid}>
-											Videos
-										</li>
-										<li ref={isexp} onClick={handleexp}>
-											Experience
-										</li>
-										<li ref={isint} onClick={handleint}>
-											Interests
-										</li>
-									</List>
-								</Leftbody__list>
+								{islist && (
+									<Leftbody__list islist={islist}>
+										<List>
+											<Li
+												className="active"
+												onClick={handlebio}
+												ref={isbio}
+											>
+												Bio
+											</Li>
+											<li ref={ised} onClick={handleed}>
+												Education
+											</li>
+											<li ref={isproj} onClick={handleproj}>
+												Projects
+											</li>
+											<li ref={isvid} onClick={handlevid}>
+												Videos
+											</li>
+											<li ref={isexp} onClick={handleexp}>
+												Experience
+											</li>
+											<li ref={isint} onClick={handleint}>
+												Interests
+											</li>
+										</List>
+									</Leftbody__list>
+								)}
 							</Left__body>
 						)}
 						<Right__body>
