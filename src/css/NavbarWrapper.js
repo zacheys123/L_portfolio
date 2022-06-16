@@ -48,6 +48,13 @@ export const NavList = styled.ul`
 		max-height: ${({ isopen }) => (isopen ? '50rem' : '0px')};
 		transition: max-height 0.8s ease-in-out;
 	}
+	@media (max-width: 375px) {
+		overflow: hidden;
+		flex-direction: column;
+		width: 100%;
+		max-height: ${({ isopen }) => (isopen ? '50rem' : '0px')};
+		transition: max-height 0.8s ease-in-out;
+	}
 `;
 export const NavItems = styled.div`
 	padding: 0 1rem;
@@ -76,7 +83,7 @@ export const NavItems = styled.div`
 	}
 
 	@media ${device.tablet} {
-		margin: 0.7rem 2rem;
+		margin: 4.5rem 2rem;
 		padding: 0 1rem !important;
 		font-size: 1.3rem !important;
 	}
@@ -88,13 +95,19 @@ export const NavItems = styled.div`
 		border-bottom: 1px solid grey;
 	}
 	@media ${device.mobileM} {
-		margin: 0.7rem 2rem;
+		margin: 4rem 2rem;
 		padding: 0 1rem !important;
 		font-size: 0.93rem !important;
 		font-weight: 700;
 	}
 	@media ${device.mobileS} {
-		margin: 0.7rem 2rem;
+		margin: 4.6rem 2rem;
+		padding: 0 1rem !important;
+		font-size: 0.93rem !important;
+		font-weight: 700;
+	}
+	@media (max-width: 375px) {
+		margin: 4.6rem 2rem;
 		padding: 0 1rem !important;
 		font-size: 0.93rem !important;
 		font-weight: 700;

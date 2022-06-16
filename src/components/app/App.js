@@ -22,7 +22,7 @@ function App() {
 			<APP>
 				<Navbar Navcallback={Parentcallback} />
 				<Routes>
-					<Route path="/" element={<Home />} />
+					<Route path="/" element={<Home opennav={childdata} />} />
 					<Route
 						exact
 						path="pages/about"

@@ -62,16 +62,32 @@ export default function Navbar(props) {
 				</Menu>
 
 				<NavList isopen={isopen}>
-					<Link style={{ textDecoration: 'none' }} to="/">
+					<Link
+						style={{ textDecoration: 'none' }}
+						to="/"
+						onClick={() => setisopen(!isopen)}
+					>
 						<NavItems>Home</NavItems>
 					</Link>
-					<Link style={{ textDecoration: 'none' }} to="pages/about">
+					<Link
+						style={{ textDecoration: 'none' }}
+						to="pages/about"
+						onClick={() => setisopen(!isopen)}
+					>
 						<NavItems>About</NavItems>
 					</Link>
-					<Link style={{ textDecoration: 'none' }} to="pages/contact">
+					<Link
+						style={{ textDecoration: 'none' }}
+						to="pages/contact"
+						onClick={() => setisopen(!isopen)}
+					>
 						<NavItems>Contact</NavItems>
 					</Link>
-					<Link style={{ textDecoration: 'none' }} to="pages/faq">
+					<Link
+						style={{ textDecoration: 'none' }}
+						to="pages/faq"
+						onClick={() => setisopen(!isopen)}
+					>
 						<NavItems>Faq</NavItems>
 					</Link>
 					<Time

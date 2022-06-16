@@ -53,6 +53,7 @@ export default function About(props) {
 	const isvid = useRef();
 	const isexp = useRef();
 	const isint = useRef();
+	const navref = useRef();
 	const [loading, setLoading] = useState(true);
 	const [islist, setList] = useState(false);
 	const [pagedata, setPagedata] = useState({});
@@ -125,6 +126,19 @@ export default function About(props) {
 		intfunc(pagedata);
 	};
 
+	// useEffect(() => {
+	// 	document.addEventListener(
+	// 		'click',
+	// 		function(ev) {
+	// 			if (ev.target !== navref.current) {
+	// 				setList(() => {
+	// 					return !islist;
+	// 				});
+	// 			}
+	// 		},
+	// 		false,
+	// 	);
+	// }, []);
 	useEffect(() => {
 		setTimeout(() => {
 			setLoading(false);
@@ -231,6 +245,7 @@ export default function About(props) {
 					</Div>
 					{islist && (
 						<motion.div
+							ref={navref}
 							initial={{ width: 0, opacity: 0 }}
 							animate={{
 								width: '100%',

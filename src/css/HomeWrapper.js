@@ -7,8 +7,19 @@ export const Wrapper = styled.div`
 		hsl(210, 90%, 3%) 50%
 	);
 	margin-top: 0.8rem;
-	display: flex;
+
 	min-height: 88vh;
+	display: ${(props) => (props.opennav ? 'none' : 'flex')};
+
+	@media ${device.mobileL} {
+		display: ${(props) => (props.opennav ? 'none' : 'flex')};
+	}
+	@media ${device.mobileM} {
+		display: ${(props) => (props.opennav ? 'none' : 'flex')};
+	}
+	@media ${device.tablet} {
+		display: ${(props) => (props.opennav ? 'none' : 'flex')};
+	}
 `;
 
 export const Header = styled.div`

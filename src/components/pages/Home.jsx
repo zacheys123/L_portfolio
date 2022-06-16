@@ -24,14 +24,14 @@ const mystyle = {
 	fontSize: '1.4rem',
 	padding: '1rem',
 };
-export default function Home() {
+export default function Home(props) {
 	return (
 		<motion.div
 			initial={{ x: '-100%', opacity: 0 }}
 			animate={{ x: '0%', opacity: 1, transition: { duration: 0.5 } }}
 			exit={{ y: '100%', transition: { duration: 0.8 } }}
 		>
-			<Wrapper className="container">
+			<Wrapper className="container" opennav={props.opennav}>
 				<Header>MyBio</Header>
 				<Info__div>
 					<Box>
