@@ -84,7 +84,7 @@ function Data(props) {
 				style={{ fontFamily: 'joan', fontWeight: 'bold !important' }}
 			>
 				{' '}
-				<Education ref={edref || ''}>
+				<Education ref={edref || ''} loading={loading}>
 					<h1>Hello Education</h1>
 				</Education>{' '}
 			</motion.div>
@@ -100,7 +100,7 @@ function Data(props) {
 				style={{ fontFamily: 'joan', fontWeight: 'bold !important' }}
 			>
 				{' '}
-				<Projects ref={projref || ''}>
+				<Projects ref={projref || ''} loading={loading}>
 					<h1>Hello Projects</h1>
 				</Projects>
 			</motion.div>
@@ -115,7 +115,7 @@ function Data(props) {
 				exit={{ scale: 1, transition: { duration: 0.8 } }}
 				style={{ fontFamily: 'joan', fontWeight: 'bold !important' }}
 			>
-				<Videos ref={vidref || ''}>
+				<Videos ref={vidref || ''} loading={loading}>
 					<h1>Hello Videos</h1>
 				</Videos>
 			</motion.div>
@@ -130,7 +130,7 @@ function Data(props) {
 				exit={{ scale: 1, transition: { duration: 0.8 } }}
 				style={{ fontFamily: 'joan', fontWeight: 'bold !important' }}
 			>
-				<Experience ref={expref || ''}>
+				<Experience ref={expref || ''} loading={loading}>
 					<h1>Hello Expereince</h1>
 				</Experience>
 			</motion.div>
@@ -145,7 +145,7 @@ function Data(props) {
 				exit={{ scale: 1, transition: { duration: 0.8 } }}
 				style={{ fontFamily: 'joan', fontWeight: 'bold !important' }}
 			>
-				<Interests ref={intref || ''}>
+				<Interests ref={intref || ''} loading={loading}>
 					<ul className="d-flex flex-wrap">
 						{interest &&
 							interest.map((data_interest) => {

@@ -13,7 +13,7 @@ function Interest({ data_interest }) {
 		<IntList>
 			<Title>
 				{' '}
-				<Typography variant="h5">{title}</Typography>
+				<Typography>{title}</Typography>
 			</Title>
 			<Description>
 				{' '}

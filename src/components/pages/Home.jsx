@@ -21,52 +21,52 @@ import proflogo from '../../assets/proflogo.png';
 const mystyle = {
 	color: 'yellowgreen',
 	fontFamily: 'roboto',
-	fontSize: '1.4rem',
+	fontSize: '1.21rem',
 	padding: '1rem',
 };
 export default function Home(props) {
 	return (
-		<motion.div
-			initial={{ x: '-100%', opacity: 0 }}
-			animate={{ x: '0%', opacity: 1, transition: { duration: 0.5 } }}
-			exit={{ y: '100%', transition: { duration: 0.8 } }}
-		>
-			<Wrapper className="container" opennav={props.opennav}>
-				<Header>MyBio</Header>
+		<Wrapper className="container-fluid" opennav={props.opennav}>
+			<Header>MyBio</Header>
+			<motion.div
+				initial={{ x: '-100%', opacity: 0 }}
+				animate={{ x: '0%', opacity: 1, transition: { duration: 2 } }}
+				exit={{ y: '100%', transition: { duration: 0.8 } }}
+			>
 				<Info__div>
 					<Box>
-						<div className="d-flex align-items-center">
-							<Static>I'm</Static>
-							<Dynamic>
-								<DynamicList>
-									<span>Zacharia Muigai...</span>
-								</DynamicList>
-								<DynamicList>
-									<span> Coder</span>
-								</DynamicList>
-								<DynamicList>
-									<span>Developer</span>{' '}
-								</DynamicList>
-								<DynamicList>
-									<span>Music Director</span>
-								</DynamicList>
-							</Dynamic>
+						<div>
+							<div className="d-flex align-items-center">
+								<Static>I'm</Static>
+								<Dynamic>
+									<DynamicList>
+										<span>Zacharia Muigai...</span>
+									</DynamicList>
+									<DynamicList>
+										<span> Coder</span>
+									</DynamicList>
+									<DynamicList>
+										<span>Developer</span>{' '}
+									</DynamicList>
+									<DynamicList>
+										<span>Music Director</span>
+									</DynamicList>
+								</Dynamic>
+							</div>
+							<Typography style={mystyle} variant="h5">
+								A React Developer and also a Music Instructor, Teacher
+								and Director.Currently leading a music company and
+								tech company.
+							</Typography>
+							<div className="btn btn-primary">Download CV</div>
 						</div>
-						<Typography style={mystyle} variant="h5">
-							A React Developer and also a Music Instructor, Teacher
-							and Director.Currently leading a music company and tech
-							company.
-						</Typography>
-						<div className="btn btn-primary">Download CV</div>
+						<Image>
+							{' '}
+							<img src={proflogo} alt="Profile Picture" />
+						</Image>
 					</Box>
 				</Info__div>
-				<Image__div>
-					<Image>
-						{' '}
-						<img src={proflogo} alt="Profile Picture" />
-					</Image>
-				</Image__div>
-			</Wrapper>
-		</motion.div>
+			</motion.div>
+		</Wrapper>
 	);
 }

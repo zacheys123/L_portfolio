@@ -23,6 +23,7 @@ export const Bio = styled.div`
 		}
 	}
 	@media ${device.mobileS} {
+		display: ${(props) => (props.loading ? 'none' : 'block')};
 		font-size: 1rem !important;
 		background: black;
 		font-size: 1rem !important;
@@ -32,6 +33,7 @@ export const Bio = styled.div`
 		}
 	}
 	@media ${device.mobileL} {
+		display: ${(props) => (props.loading ? 'none' : 'block')};
 		font-size: 1rem !important;
 		background: black;
 		font-size: 1rem !important;
@@ -41,6 +43,7 @@ export const Bio = styled.div`
 		}
 	}
 	@media ${device.mobileM} {
+		display: ${(props) => (props.loading ? 'none' : 'block')};
 		font-size: 1rem !important;
 		background: black;
 		font-size: 1rem !important;
@@ -50,6 +53,7 @@ export const Bio = styled.div`
 		}
 	}
 	@media ${device.laptop} {
+		display: ${(props) => (props.loading ? 'none' : 'block')};
 		background: black;
 
 		& p {
@@ -59,11 +63,11 @@ export const Bio = styled.div`
 	}
 `;
 export const Education = styled.div`
+	display: ${(props) => (props.loading ? 'none' : 'block')};
 	background: blue;
 	width: 100%;
 	min-height: 100%;
 	transform: scale(0);
-	display: none;
 
 	@media ${device.tablet} {
 		background: black;
@@ -80,7 +84,8 @@ export const Projects = styled.div`
 	width: 100%;
 	min-height: 100%;
 	transform: scale(0);
-	display: none;
+
+	display: ${(props) => (props.loading ? 'none' : 'block')};
 
 	@media ${device.tablet} {
 		background: black;
@@ -96,7 +101,8 @@ export const Videos = styled.div`
 	background: purple;
 	width: 100%;
 	transform: scale(0);
-	display: none;
+
+	display: ${(props) => (props.loading ? 'none' : 'block')};
 
 	@media ${device.tablet} {
 		background: black;
@@ -113,7 +119,7 @@ export const Experience = styled.div`
 	width: 100%;
 	transform: scale(0);
 	min-height: 35rem;
-	display: none;
+	display: ${(props) => (props.loading ? 'none' : 'block')};
 
 	@media ${device.tablet} {
 		background: black;
@@ -129,8 +135,7 @@ export const Interests = styled.div`
 	transform: scale(0);
 	width: 100%;
 	padding: 1rem;
-
-	display: none;
+	display: ${(props) => (props.loading ? 'none' : 'block')};
 
 	@media ${device.tablet} {
 		background: black;
@@ -142,4 +147,3 @@ export const Interests = styled.div`
 		}
 	}
 `;
-// each page styling

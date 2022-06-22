@@ -27,15 +27,16 @@ export default function Navbar(props) {
 		const date = new Date().toLocaleTimeString();
 		setDate(date);
 	};
-	props.Navcallback(isopen);
+
 	useEffect(() => {
+		props.Navcallback(isopen);
 		setInterval(() => {
 			mywatch();
 		}, 1000);
 		return () => {
 			clearInterval(mywatch);
 		};
-	}, []);
+	}, [isopen, props.Navcallback]);
 	return (
 		<Grid>
 			<Wrapper className="container-fluid">

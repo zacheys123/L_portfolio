@@ -28,7 +28,11 @@ function App() {
 						path="pages/about"
 						element={<About opennav={childdata} />}
 					/>
-					<Route exact path="pages/contact" element={<Contact />} />
+					<Route
+						exact
+						path="pages/contact"
+						element={<Contact opennav={childdata} />}
+					/>
 					<Route exact path="*" element={<Nopage />} />
 					<Route exact path="pages/faq" element={<Faq />} />
 				</Routes>

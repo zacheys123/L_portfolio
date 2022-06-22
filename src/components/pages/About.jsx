@@ -159,20 +159,12 @@ export default function About(props) {
 					<Div className="d-flex  justify-content-end mt-2">
 						<Box>
 							<Icons>
-								<IconButton>
-									{!islist ? (
-										<MoreVert
-											onClick={() => {
-												setList(!islist);
-											}}
-										/>
-									) : (
-										<Close
-											onClick={() => {
-												setList(!islist);
-											}}
-										/>
-									)}
+								<IconButton
+									onClick={() => {
+										setList(!islist);
+									}}
+								>
+									{!islist ? <MoreVert /> : <Close />}
 								</IconButton>
 							</Icons>
 							<Link to="" className="navbio__head">
@@ -284,48 +276,47 @@ export default function About(props) {
 						</motion.div>
 					)}
 					<BodyWrapper>
-						{!loading && (
-							<Left__body loading={loading}>
-								<Borderdiv>
-									<motion.div
-										initial={{ y: '-1rem' }}
-										animate={{ y: '36vh' }}
-										transition={{ repeat: Infinity, duration: 3 }}
-										style={{
-											border: '2px solid lightgreen',
-											height: '4rem',
-										}}
-									></motion.div>
-								</Borderdiv>
+						<Left__body loading={loading}>
+							<Borderdiv>
+								<motion.div
+									initial={{ y: '-1rem' }}
+									animate={{ y: '36vh' }}
+									transition={{ repeat: Infinity, duration: 3 }}
+									style={{
+										border: '2px solid lightgreen',
+										height: '4rem',
+									}}
+								></motion.div>
+							</Borderdiv>
 
-								<Leftbody__list>
-									<List>
-										<Li
-											className="active"
-											onClick={handlebio}
-											ref={isbio}
-										>
-											Bio
-										</Li>
-										<li ref={ised} onClick={handleed}>
-											Education
-										</li>
-										<li ref={isproj} onClick={handleproj}>
-											Projects
-										</li>
-										<li ref={isvid} onClick={handlevid}>
-											Videos
-										</li>
-										<li ref={isexp} onClick={handleexp}>
-											Experience
-										</li>
-										<li ref={isint} onClick={handleint}>
-											Interests
-										</li>
-									</List>
-								</Leftbody__list>
-							</Left__body>
-						)}
+							<Leftbody__list>
+								<List>
+									<Li
+										className="active"
+										onClick={handlebio}
+										ref={isbio}
+									>
+										Bio
+									</Li>
+									<li ref={ised} onClick={handleed}>
+										Education
+									</li>
+									<li ref={isproj} onClick={handleproj}>
+										Projects
+									</li>
+									<li ref={isvid} onClick={handlevid}>
+										Videos
+									</li>
+									<li ref={isexp} onClick={handleexp}>
+										Experience
+									</li>
+									<li ref={isint} onClick={handleint}>
+										Interests
+									</li>
+								</List>
+							</Leftbody__list>
+						</Left__body>
+
 						<Right__body>
 							<dataContext.Provider
 								value={{

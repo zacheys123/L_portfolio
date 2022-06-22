@@ -1,0 +1,38 @@
+
+.disable{
+pointer-events:none !important;opacity: .5 !important;
+    cursor: none;
+    font-size: 1rem !important;
+    opacity: 1;
+    color: rgb(191, 187, 187) !important;
+}
+.disp_none {
+display:none;
+}
+
+.active_button {
+    pointer-events:none !important;
+    opacity: .5 !important;
+        cursor: none;
+        font-size: 1.8rem !important;
+        opacity: 1;
+        color: rgb(191, 187, 187) !important;
+    }
+    
+    .active_button {
+        pointer-events: visible !important;
+        cursor: pointer !important;
+        font-size: 1.8rem !important;
+        opacity: 1;opacity: .5 !important;
+            cursor: none;
+            font-size: 1.8rem !important;
+            opacity: 1;
+            color: rgb(191, 187, 187) !important;
+        }
+        
+        .active_button {
+            pointer-events: visible !important;
+            cursor: pointer !important;
+            font-size: 1.8rem !important;
+            opacity: 1;
+        }

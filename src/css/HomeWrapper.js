@@ -6,20 +6,9 @@ export const Wrapper = styled.div`
 		hsl(110, 40%, 0%) 20%,
 		hsl(210, 90%, 3%) 50%
 	);
+
 	margin-top: 0.8rem;
-
 	min-height: 88vh;
-	display: ${(props) => (props.opennav ? 'none' : 'flex')};
-
-	@media ${device.mobileL} {
-		display: ${(props) => (props.opennav ? 'none' : 'flex')};
-	}
-	@media ${device.mobileM} {
-		display: ${(props) => (props.opennav ? 'none' : 'flex')};
-	}
-	@media ${device.tablet} {
-		display: ${(props) => (props.opennav ? 'none' : 'flex')};
-	}
 `;
 
 export const Header = styled.div`
@@ -28,6 +17,13 @@ export const Header = styled.div`
 	color: rgba(233, 45, 127, 0.4) !important;
 	font-size: 1.6rem;
 	font-weight: bold;
+`;
+export const Info__div = styled.div`
+	margin-top: 30%;
+	display: flex;
+	margin: 10% auto;
+	height: 10rem;
+	max-width: 40rem;
 `;
 export const Static = styled.h4`
 	color: white;
@@ -79,37 +75,21 @@ export const DynamicList = styled.li`
 	
 `;
 
-export const Info__div = styled.div`
-	margin-top: 30%;
-	flex: 0.5;
-`;
-export const Image__div = styled.div`
-	flex: 0.5;
-	display: flex;
-	align-items: center;
-	position: relative;
-
+export const Image = styled.div`
 	& img {
-		height: 100%;
+		width: 9rem !important;
+		height: 9rem !important;
 		margin-left: 9rem;
 		border-radius: 100% !important;
 		object-fit: fill;
 		object-position: top;
 		transition: all 0.4s ease-in-out;
-		width: 100%;
+
 		filter: grayscale(0);
 
 		&:hover {
 			filter: grayscale(100%);
 		}
-	}
-`;
-export const Image = styled.div`
-	max-width: 29rem !important;
-	min-height: 3rem !important;
-
-	@media ${device.tablet} {
-		margin-left: -9rem !important;
 	}
 `;
 export const info = styled.div`
@@ -122,5 +102,8 @@ export const Box = styled.div`
 	display: block;
 	border: 1px solid inherit;
 	border-radius: 15px;
+	display: flex;
+	height: 10rem;
+	max-width: 40rem;
 	padding: 2rem 1rem;
 `;

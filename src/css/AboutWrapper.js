@@ -4,19 +4,23 @@ export const Wrapper = styled.div`
 	background: black;
 	overflow: hidden;
 	min-height: 88vh;
-	display: ${(props) => (props.opennav ? 'none' : '')};
+
 	@media ${device.tablet} {
 		min-height: max-content;
+		display: ${(props) => (props.opennav ? 'none' : 'block')};
 	}
 
 	@media ${device.mobileM} {
+		display: ${(props) => (props.opennav ? 'none' : '')};
 		min-height: max-content;
 	}
 	@media ${device.mobileS} {
+		display: ${(props) => (props.opennav ? 'none' : '')};
 		min-height: max-content;
 	}
 
 	@media ${device.mobileM} {
+		display: ${(props) => (props.opennav ? 'none' : '')};
 		min-height: max-content;
 	}
 `;
