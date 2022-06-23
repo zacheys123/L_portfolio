@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import background from '../assets/newback.jpg';
 import right from '../assets/question2.jpg';
-import personal from '../assets/personal.jpg';
+import personal from '../assets/question1.jpg';
 import tech from '../assets/tech.jpg';
 import music from '../assets/music.jpg';
 import other from '../assets/other.jpg';
@@ -55,16 +55,9 @@ export const Left_faq = styled.div`
 export const Right_faq = styled.div`
 	flex: 0.75;
 	max-height: 100%;
+	position: relative;
 	background-image: url(${right});
 	overflow-y: auto;
-	background-image: ${(props) =>
-		props.ispersonal ? 'url(${right})' : ''};
-	background-image: ${(props) =>
-		props.istech ? 'url(${right})' : ''};
-	background-image: ${(props) =>
-		props.ismusic ? 'url(${right})' : ''};
-	background-image: ${(props) =>
-		props.isother ? 'url(${right})' : ''};
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
@@ -80,6 +73,7 @@ export const Right_faq = styled.div`
 		max-width: 83%;
 		margin-bottom: 1rem;
 		border-radius: 10px;
+		border-radius: 4rem;
 		padding: 1.5rem;
 		& p {
 			background: linear-gradient(
@@ -102,25 +96,34 @@ export const Right_faq = styled.div`
 	}
 `;
 export const PersonalWrapper = styled.div`
+	display: none;
+	background-image: url(${personal});
 	background-repeat: no-repeat;
-	background-position: center;
+	background-position: fixed;
+	position: absolute;
 	background-size: cover;
 `;
 export const TechWrapper = styled.div`
+	display: none;
+	position: absolute;
 	background-image: url(${tech});
 	background-repeat: no-repeat;
-	background-position: center;
+	background-position: fixed;
 	background-size: cover;
 `;
 export const MusicWrapper = styled.div`
+	display: none;
 	background-image: url(${music});
 	background-repeat: no-repeat;
-	background-position: center;
+	background-position: fixed;
+	background-repeat: no-repeat;
 	background-size: cover;
 `;
 export const OtherWrapper = styled.div`
+	display: none;
+	position: absolute;
 	background-image: url(${other});
 	background-repeat: no-repeat;
-	background-position: center;
+	background-position: fixed;
 	background-size: cover;
 `;

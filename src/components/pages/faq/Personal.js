@@ -15,10 +15,11 @@ function Personal({ data }) {
 			<ol>
 				<li>
 					<div
+						style={{ borderRadius: '20px' }}
 						className={
 							isdropdown
 								? 'd-flex justify-content-between '
-								: 'd-flex justify-content-between bg-light py-3'
+								: 'd-flex justify-content-between bg-dark py-3'
 						}
 					>
 						<div className="px-4">
@@ -43,7 +44,7 @@ function Personal({ data }) {
 									sx={{
 										fontSize: '3rem!important',
 										marginRight: ' 2.5rem !important',
-										color: 'grey',
+										color: 'white',
 									}}
 								/>
 							) : (

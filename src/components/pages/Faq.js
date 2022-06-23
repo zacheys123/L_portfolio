@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useReducer } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {
 	Wrapper,
 	Left_faq,
@@ -8,25 +8,71 @@ import {
 	MusicWrapper,
 	OtherWrapper,
 } from '../../css/Faq';
-
+import { motion } from 'framer-motion/dist/framer-motion';
 import { faqs } from './faq/faqs';
 import Personal from './faq/Personal';
 import Other from './faq/Other';
 import Music from './faq/Music';
 import Tech from './faq/Tech';
+import './faq/faq.css';
 function Faq() {
 	const [faq, setFaq] = useState(faqs);
-	const [ispersonal, setPersonal] = useState(false);
-	const [istech, setTech] = useState(false);
-	const [ismusic, setMusic] = useState(false);
-	const [isother, setOther] = useState(false);
+	const [loading, setLoading] = useState(true);
+	const personalref = useRef(null);
+	const techref = useRef(null);
+	const musicref = useRef(null);
+	const otherref = useRef(null);
 
 	useEffect(() => {
-		faq &&
-			faq.map((fqs) => {
-				setFaq(() => fqs);
-			});
+		setTimeout(() => {
+			setLoading(false);
+		}, 2000);
+		return () => {
+			clearTimeout();
+		};
 	}, []);
+	const personal = () => {
+		personalref.current.classList.add('active_page');
+		techref.current.classList.add('remove');
+		techref.current.classList.remove('active_page');
+		musicref.current.classList.add('remove');
+		musicref.current.classList.remove('active_page');
+		otherref.current.classList.add('remove');
+		otherref.current.classList.remove('active_page');
+		setLoading(false);
+	};
+	const tech = () => {
+		techref.current.classList.add('active_page');
+		personalref.current.classList.add('remove');
+		personalref.current.classList.remove('active_page');
+		musicref.current.classList.add('remove');
+		musicref.current.classList.remove('active_page');
+		otherref.current.classList.add('remove');
+		otherref.current.classList.remove('active_page');
+		setLoading(false);
+	};
+	const music = () => {
+		musicref.current.classList.add('active_page');
+		techref.current.classList.add('remove');
+		techref.current.classList.remove('active_page');
+		personalref.current.classList.add('remove');
+		personalref.current.classList.remove('active_page');
+		otherref.current.classList.add('remove');
+		otherref.current.classList.remove('active_page');
+		setLoading(false);
+		console.log();
+	};
+	const other = () => {
+		otherref.current.classList.add('active_page');
+		techref.current.classList.add('remove');
+		techref.current.classList.remove('active_page');
+		musicref.current.classList.add('remove');
+		musicref.current.classList.remove('active_page');
+		personalref.current.classList.add('remove');
+		personalref.current.classList.remove('active_page');
+		setLoading(false);
+	};
+
 	return (
 		<>
 			<Wrapper className="container-fluid ">
@@ -34,50 +80,68 @@ function Faq() {
 					<div>
 						<div className="choices">
 							<ul>
-								<li onClick={() => setPersonal(!ispersonal)}>
-									Personal
-								</li>
-								<li onClick={() => setTech(!istech)}>IT</li>
-								<li onClick={() => setMusic(!ismusic)}>Music</li>
-								<li onClick={() => setOther(!isother)}>Other</li>
+								<li onClick={personal}>Personal</li>
+								<li onClick={tech}>IT</li>
+								<li onClick={music}>Music</li>
+								<li onClick={other}>Other</li>
 							</ul>
 						</div>
 					</div>
 				</Left_faq>
 
-				<Right_faq
-					ispersonal={ispersonal}
-					istech={istech}
-					ismusic={ismusic}
-					isother={isother}
-				>
+				<Right_faq>
+					{loading && (
+						<div className="loading">
+							<motion.div
+								initial={{ x: '0rem' }}
+								animate={{ x: '10vw' }}
+								transition={{ repeat: Infinity, duration: 0.31 }}
+								style={{
+									width: '11%',
+									border: '3px solid green',
+									height: '100%',
+								}}
+							></motion.div>
+						</div>
+					)}
 					<div>
-						<PersonalWrapper>
-							{ispersonal &&
-								faq.personal.map((data) => {
-									if (Object.keys(data).length > 1)
-										return <Personal data={data} />;
+						<PersonalWrapper
+							ref={personalref || ''}
+							loading={loading}
+						>
+							{faq &&
+								faq.map((firstdata) => {
+									return firstdata.personal.map((data) => {
+										if (Object.keys(data).length > 1)
+											return <Personal data={data} />;
+									});
 								})}
 						</PersonalWrapper>
-						<TechWrapper>
-							{istech &&
-								faq.it.map((data) => {
-									if (Object.keys(data).length > 1)
-										return <Tech data={data} />;
+						<TechWrapper ref={techref || ''} loading={loading}>
+							{faq &&
+								faq.map((firstdata) => {
+									return firstdata.it.map((data) => {
+										if (Object.keys(data).length > 1)
+											return <Tech data={data} />;
+									});
 								})}
 						</TechWrapper>
-						<MusicWrapper>
-							{ismusic &&
-								faq.music.map((data) => {
-									if (Object.keys(data).length > 1)
-										return <Music data={data} />;
+						<MusicWrapper ref={musicref || ''} loading={loading}>
+							{faq &&
+								faq.map((firstdata) => {
+									return firstdata.music.map((data) => {
+										if (Object.keys(data).length > 1)
+											return <Music data={data} />;
+									});
 								})}
 						</MusicWrapper>
-						<OtherWrapper>
-							{isother &&
-								faq.other.map((data) => {
-									if (Object.keys(data).length > 1)
-										return <Other data={data} />;
+						<OtherWrapper ref={otherref || ''} loading={loading}>
+							{faq &&
+								faq.map((firstdata) => {
+									return firstdata.other.map((data) => {
+										if (Object.keys(data).length > 1)
+											return <Other data={data} />;
+									});
 								})}
 						</OtherWrapper>
 					</div>

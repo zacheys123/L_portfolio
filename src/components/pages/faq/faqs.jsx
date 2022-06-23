@@ -65,8 +65,64 @@ export const faqs = () => {
 						'I beleive in innovations and introducing someting new to people and the community so i intend to have startup soon,i have a couple projects i have worked on and more coming.',
 				},
 			],
-			music: [{}],
-			other: [{}],
+			music: [
+				{
+					id: 1,
+					title: 'Whats Music to you?',
+					answer:
+						'Music is a way of life.A necessity if i might say,music heals and takes care of us when in difficult situations or even whe just having fun.So i believe that all this happens if u feel the music itself and enjoy it as it shold.',
+				},
+				{
+					id: 2,
+					title: 'Musical Background ',
+					answer:
+						'Like IT music has not been my goto kind of pass time or interest i was always involved in different things like sports or games,i first had a taste of what music was wen i was in my third year in high school.I had a decent start where i had classes one month and i thank God that was enough to spearhead my passion and now career.And from then on i have to tried to improve and master my craft to the fullest as it can be seen in my videos section in the about page.',
+				},
+				{
+					id: 3,
+					title: 'Achievements',
+					answer:
+						"Music has taken me to places i never thought i could go.Right as i am making this website i work at inooro tv as a keyboard player for their country show that airs every sunday at 10pm/I have played for dignitaries and also CEO'S,i also have my own shows that i play, ",
+				},
+				{
+					id: 4,
+					title: 'Skills',
+					answer:
+						"When i took on music i decided to learn evrything,every genre out there because i like to be versatile.As much as i can ubble in many genre i mostly do jazz music,afro jazz or traditional jazz,gospel jazz,I have to tried to be on top of my game since there's always room for improvement.",
+				},
+				{
+					id: 4,
+					title: 'Future plans for Music',
+					answer:
+						"I've been pushing myself to be better in every aspect music related,as i said there's always room for improvement and i'm always adding new skills.Right now i have a music studio  that caters for recording songs and also inconjuction with studio time for bands and also instruments for hire.Infuture i want to have my own music school to teach students what i have learnt over the years.",
+				},
+			],
+			other: [
+				{
+					id: 1,
+					title: 'Good in drums',
+				},
+				{
+					id: 2,
+					title: 'Good in Guitar',
+				},
+				{
+					id: 3,
+					title: 'Good in Bass',
+				},
+				{
+					id: 4,
+					title: 'I sing once in a while',
+				},
+				{
+					id: 5,
+					title: 'I also program and write code',
+				},
+				{
+					id: 6,
+					title: 'I dance',
+				},
+			],
 		},
 	];
 };

@@ -15,6 +15,7 @@ function Other({ data }) {
 			<ol>
 				<li>
 					<div
+						style={{ borderRadius: '20px' }}
 						className={
 							isdropdown
 								? 'd-flex justify-content-between '
@@ -37,43 +38,8 @@ function Other({ data }) {
 							onClick={() => {
 								setDropdown(!isdropdown);
 							}}
-						>
-							{!isdropdown ? (
-								<ArrowDropDownCircle
-									sx={{
-										fontSize: '3rem!important',
-										marginRight: ' 2.5rem !important',
-										color: 'grey',
-									}}
-								/>
-							) : (
-								<ArrowCircleUpTwoTone
-									sx={{
-										fontSize: '3rem!important',
-										marginRight: ' 2.5rem !important',
-										color: 'green',
-									}}
-								/>
-							)}
-						</IconButton>
+						></IconButton>
 					</div>
-					{isdropdown && (
-						<motion.p
-							initial={{ y: '-100%', scale: 0 }}
-							animate={{
-								y: 0,
-								scale: 1,
-								transition: { duration: 0.6 },
-							}}
-							exit={{
-								y: 0,
-								opacity: 1,
-								transition: { duration: 0.6 },
-							}}
-						>
-							{answer}
-						</motion.p>
-					)}
 				</li>
 			</ol>
 		</>

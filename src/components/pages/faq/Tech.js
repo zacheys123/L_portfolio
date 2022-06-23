@@ -15,6 +15,7 @@ function Tech({ data }) {
 			<ol>
 				<li>
 					<div
+						style={{ borderRadius: '20px' }}
 						className={
 							isdropdown
 								? 'd-flex justify-content-between '
