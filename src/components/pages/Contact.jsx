@@ -164,7 +164,7 @@ export default function Contact(props) {
 				animate={{
 					y: 0,
 					opacity: 1,
-					transition: { duration: 3.7 },
+					transition: { duration: 2.7 },
 				}}
 				exit={{ x: window.innerWidth, transition: { duration: 0.8 } }}
 			>

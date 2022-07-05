@@ -32,7 +32,20 @@ function Personal({ data }) {
 							>
 								{id}
 							</span>
-							<code>{title}</code>
+							{!isdropdown ? (
+								<code style={{ color: 'lightblue' }}>{title}</code>
+							) : (
+								<code
+									style={{
+										color: 'red',
+										fontFamily: 'joan',
+										fontSize: '1rem',
+										fontWeight: '900',
+									}}
+								>
+									{title}
+								</code>
+							)}
 						</div>
 						<IconButton
 							onClick={() => {
@@ -52,7 +65,7 @@ function Personal({ data }) {
 									sx={{
 										fontSize: '3rem!important',
 										marginRight: ' 2.5rem !important',
-										color: 'green',
+										color: 'red',
 									}}
 								/>
 							)}

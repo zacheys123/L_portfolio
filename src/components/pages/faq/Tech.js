@@ -19,7 +19,7 @@ function Tech({ data }) {
 						className={
 							isdropdown
 								? 'd-flex justify-content-between '
-								: 'd-flex justify-content-between bg-light py-3'
+								: 'd-flex justify-content-between bg-dark py-3'
 						}
 					>
 						<div className="px-4">
@@ -32,7 +32,11 @@ function Tech({ data }) {
 							>
 								{id}
 							</span>
-							<code>{title}</code>
+							{!isdropdown ? (
+								<code style={{ color: 'lightblue' }}>{title}</code>
+							) : (
+								<code style={{ color: 'red' }}>{title}</code>
+							)}
 						</div>
 						<IconButton
 							onClick={() => {
@@ -44,7 +48,7 @@ function Tech({ data }) {
 									sx={{
 										fontSize: '3rem!important',
 										marginRight: ' 2.5rem !important',
-										color: 'grey',
+										color: 'white',
 									}}
 								/>
 							) : (
@@ -52,7 +56,7 @@ function Tech({ data }) {
 									sx={{
 										fontSize: '3rem!important',
 										marginRight: ' 2.5rem !important',
-										color: 'green',
+										color: 'red',
 									}}
 								/>
 							)}

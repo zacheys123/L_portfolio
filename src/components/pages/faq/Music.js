@@ -32,7 +32,11 @@ const Music = ({ data }) => {
 							>
 								{id}
 							</span>
-							<code>{title}</code>
+							{!isdropdown ? (
+								<code style={{ color: 'lightblue' }}>{title}</code>
+							) : (
+								<code style={{ color: 'red' }}>{title}</code>
+							)}
 						</div>
 						<IconButton
 							onClick={() => {

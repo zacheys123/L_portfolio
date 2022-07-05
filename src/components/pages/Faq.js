@@ -15,6 +15,7 @@ import Other from './faq/Other';
 import Music from './faq/Music';
 import Tech from './faq/Tech';
 import './faq/faq.css';
+
 function Faq() {
 	const [faq, setFaq] = useState(faqs);
 	const [loading, setLoading] = useState(true);
@@ -22,6 +23,7 @@ function Faq() {
 	const techref = useRef(null);
 	const musicref = useRef(null);
 	const otherref = useRef(null);
+	const mainref = useRef(null);
 
 	useEffect(() => {
 		setTimeout(() => {
@@ -60,7 +62,6 @@ function Faq() {
 		otherref.current.classList.add('remove');
 		otherref.current.classList.remove('active_page');
 		setLoading(false);
-		console.log();
 	};
 	const other = () => {
 		otherref.current.classList.add('active_page');
@@ -89,21 +90,7 @@ function Faq() {
 					</div>
 				</Left_faq>
 
-				<Right_faq>
-					{loading && (
-						<div className="loading">
-							<motion.div
-								initial={{ x: '0rem' }}
-								animate={{ x: '10vw' }}
-								transition={{ repeat: Infinity, duration: 0.31 }}
-								style={{
-									width: '11%',
-									border: '3px solid green',
-									height: '100%',
-								}}
-							></motion.div>
-						</div>
-					)}
+				<Right_faq ref={mainref}>
 					<div>
 						<PersonalWrapper
 							ref={personalref || ''}

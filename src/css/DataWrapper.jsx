@@ -9,13 +9,13 @@ export const Bio = styled.div`
 	background: lightgreen;
 	width: 100%;
 	min-height: 35rem;
-	display: ${(props) => (props.loading ? 'none' : 'block')};
+	display: none;
 	z-index: 1;
 
 	@media ${device.tablet} {
 		display: none;
 		background: black;
-		display: ${(props) => (props.loading ? 'none' : 'block')};
+		display: none;
 		font-size: 1rem !important;
 		& p {
 			font-size: 0.7rem !important;
@@ -98,8 +98,7 @@ export const Projects = styled.div`
 	}
 `;
 export const Videos = styled.div`
-	background: purple;
-	width: 100%;
+	max-width: 100%;
 	transform: scale(0);
 
 	display: ${(props) => (props.loading ? 'none' : 'block')};

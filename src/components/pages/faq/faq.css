@@ -19,3 +19,38 @@ min-height:100%;
     border-radius: 20px;
     background-color: #eee;
 }
+
+/* .personal {
+    background-image:url('./../../../assets/question1.jpg') !important;
+    background-position:center  ;background-repeat:no-repeat;
+    background-size:cover;
+ 
+}
+.tech {
+    background-image: url('./../../../assets/question1.jpg')!important;
+        background-position: center ;
+        background-repeat: no-repeat;
+        background-size: cover;
+      
+}
+.music {
+    background-image: url('./../../../assets/question1.jpg') !important;
+        background-position: center ;
+        background-repeat: no-repeat;
+        background-size: cover;
+       
+}
+.other {
+    background-image: url('./../../../assets/question1.jpg') !important;
+
+        background-position: center ;
+        background-repeat: no-repeat;
+        background-size: cover;
+} */
+
+.lightBlue{
+    color:lightblue !important;
+}
+.rd{
+    color:red !important;
+}

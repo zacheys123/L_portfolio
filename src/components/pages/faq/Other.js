@@ -19,7 +19,7 @@ function Other({ data }) {
 						className={
 							isdropdown
 								? 'd-flex justify-content-between '
-								: 'd-flex justify-content-between bg-light py-3'
+								: 'd-flex justify-content-between bg-dark py-3'
 						}
 					>
 						<div className="px-4">
@@ -32,7 +32,11 @@ function Other({ data }) {
 							>
 								{id}
 							</span>
-							<code>{title}</code>
+							{!isdropdown ? (
+								<code style={{ color: 'lightblue' }}>{title}</code>
+							) : (
+								<code style={{ color: 'red' }}>{title}</code>
+							)}
 						</div>
 						<IconButton
 							onClick={() => {

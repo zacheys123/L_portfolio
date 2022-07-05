@@ -1,10 +1,7 @@
 import styled from 'styled-components';
 import background from '../assets/newback.jpg';
-import right from '../assets/question2.jpg';
-import personal from '../assets/question1.jpg';
-import tech from '../assets/tech.jpg';
-import music from '../assets/music.jpg';
-import other from '../assets/other.jpg';
+import right from '../assets/newback2.jpg';
+
 import { media__queries as device } from './media__queries';
 
 export const Wrapper = styled.div`
@@ -90,40 +87,24 @@ export const Right_faq = styled.div`
 		text-decoration: underline;
 		margin-left: 1.5rem !important;
 		cursor: pointer;
-		color: lightblue;
+		color: ${({ isdropdown }) => (isdropdown ? 'red' : 'lightblue')};
 		padding-bottom: 0.4rem;
 		text-decoration-color: grey;
 	}
 `;
 export const PersonalWrapper = styled.div`
 	display: none;
-	background-image: url(${personal});
-	background-repeat: no-repeat;
-	background-position: fixed;
 	position: absolute;
-	background-size: cover;
 `;
 export const TechWrapper = styled.div`
 	display: none;
 	position: absolute;
-	background-image: url(${tech});
-	background-repeat: no-repeat;
-	background-position: fixed;
-	background-size: cover;
 `;
 export const MusicWrapper = styled.div`
 	display: none;
-	background-image: url(${music});
-	background-repeat: no-repeat;
-	background-position: fixed;
-	background-repeat: no-repeat;
-	background-size: cover;
+	position: absolute;
 `;
 export const OtherWrapper = styled.div`
 	display: none;
 	position: absolute;
-	background-image: url(${other});
-	background-repeat: no-repeat;
-	background-position: fixed;
-	background-size: cover;
 `;

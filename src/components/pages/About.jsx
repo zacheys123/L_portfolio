@@ -71,7 +71,7 @@ export default function About(props) {
 		isvid.current.classList.remove('active');
 		isexp.current.classList.remove('active');
 		isint.current.classList.remove('active');
-		setLoading(false);
+
 		biofunc(pagedata);
 	};
 	const handleed = () => {
@@ -81,7 +81,7 @@ export default function About(props) {
 		isvid.current.classList.remove('active');
 		isexp.current.classList.remove('active');
 		isint.current.classList.remove('active');
-		setLoading(false);
+
 		edfunc(pagedata);
 	};
 
@@ -92,7 +92,7 @@ export default function About(props) {
 		isvid.current.classList.remove('active');
 		isexp.current.classList.remove('active');
 		isint.current.classList.remove('active');
-		setLoading(false);
+
 		projfunc(pagedata);
 	};
 	const handlevid = () => {
@@ -102,7 +102,7 @@ export default function About(props) {
 		isvid.current.classList.add('active');
 		isexp.current.classList.remove('active');
 		isint.current.classList.remove('active');
-		setLoading(false);
+
 		vidfunc(pagedata);
 	};
 	const handleexp = () => {
@@ -112,7 +112,7 @@ export default function About(props) {
 		isvid.current.classList.remove('active');
 		isexp.current.classList.add('active');
 		isint.current.classList.remove('active');
-		setLoading(false);
+
 		expfunc(pagedata);
 	};
 	const handleint = () => {
@@ -122,7 +122,7 @@ export default function About(props) {
 		isvid.current.classList.remove('active');
 		isexp.current.classList.remove('active');
 		isint.current.classList.add('active');
-		setLoading(false);
+
 		intfunc(pagedata);
 	};
 
@@ -139,11 +139,7 @@ export default function About(props) {
 	// 		false,
 	// 	);
 	// }, []);
-	useEffect(() => {
-		setTimeout(() => {
-			setLoading(false);
-		}, 3000);
-	}, []);
+
 	return (
 		<>
 			<motion.div
